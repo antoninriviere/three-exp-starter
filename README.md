@@ -1,14 +1,14 @@
 # three-exp-starter
-3D Experiment starter to build cool stuff :rocket:
+3D Experiment starter to test cool things fast :rocket:
 
 ### install : 
-__yarn__
+__npm install__
 -> install dependencies
 ### dev :
-__yarn dev__
+__npm run dev__
 -> watch files for dev
 ### prod :
-__yarn build__
+__npm run build__
 -> build in dist/ directory
 
 ## Technologies
