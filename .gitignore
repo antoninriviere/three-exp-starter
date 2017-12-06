@@ -1,0 +1,8 @@
+.vscode/
+
+_DS_Store
+
+node_modules/
+
+dist/*
+!dist/index.html
