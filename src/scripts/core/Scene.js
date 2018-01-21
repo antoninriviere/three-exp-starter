@@ -4,7 +4,7 @@ import Stats from 'stats-js'
 
 import OrbitControls from 'orbit-controls'
 
-import Wagner from '@superguigui/wagner'
+import { EffectComposer, RenderPass } from 'postprocessing'
 
 class SceneObj extends Scene {
   constructor (options) {
@@ -77,13 +77,16 @@ class SceneObj extends Scene {
   }
 
   initPostProcessing () {
-    this.composer = new Wagner.Composer(this.renderer)
+    this.composer = new EffectComposer(this.renderer)
+    this.composer.addPass(new RenderPass(this, this.camera))
 
     this.passes = []
 
     this.options.postProcessing.passes.map(pass => {
       if (pass.active) {
-        this.passes.push(pass.constructor())
+        const passObject = pass.constructor()
+        passObject.renderToScreen = pass.active
+        this.composer.addPass(passObject)
       }
     })
   }
@@ -97,14 +100,7 @@ class SceneObj extends Scene {
     }
 
     if (this.options.postProcessing.active) {
-      this.composer.reset()
-      this.composer.render(this, this.camera)
-
-      for (let i = 0; i < this.passes.length; i++) {
-        this.composer.pass(this.passes[i])
-      }
-
-      this.composer.toScreen()
+      this.composer.render()
     } else {
       this.renderer.render(this, this.camera)
     }

@@ -42,9 +42,9 @@
     "webpack-dev-server": "2"
   },
   "dependencies": {
-    "@superguigui/wagner": "^0.1.5",
     "gsap": "^1.19.1",
+    "postprocessing": "^4.1.0",
     "stats-js": "^1.0.0-alpha1",
-    "three": "^0.84.0"
+    "three": "^0.89.0"
   }
 }

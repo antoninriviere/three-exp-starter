@@ -1,4 +1,4 @@
-import GlitchPass from '@superguigui/wagner/src/passes/glitch/GlitchPass'
+import { GlitchPass } from 'postprocessing'
 
 export default {
   debug: {

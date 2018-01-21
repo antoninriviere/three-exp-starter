@@ -18,7 +18,7 @@ __npm run build__
 * ES6 w/ Babel
 * Webpack 2
 * StandardJs linting with eslint
-* Wagner
+* Postprocessing
 * ControlKit
 * Orbit controls
 

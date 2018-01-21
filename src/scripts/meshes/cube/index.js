@@ -6,7 +6,7 @@ class Cube extends Object3D {
   constructor () {
     super()
     const geometry = new BoxGeometry(2, 2, 2)
-    const material = new MeshBasicMaterial({ color: 0xff00ff, wireframe: true })
+    const material = new MeshBasicMaterial({ color: 0xffff0ff, wireframe: true })
 
     this.mesh = new Mesh(geometry, material)
     this.add(this.mesh)
